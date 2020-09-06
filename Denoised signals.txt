@@ -1,0 +1,11 @@
+s1 = audioread('sp01_train_sn5'); % load image as a double
+        
+title('Original Signal')
+ x = s + 20*randn(size(s));	       % add Gaussian noise to the signal
+subplot (3,1,2), plot(x)	       % plot the noisy signal
+ title('Noisy Signal')
+ T = 25;			       % choose a threshold of 20
+ y = S1D(x,T);		       % denoise the noisy signal using
+                                       % double-density DWT
+ subplot(3,1,3), plot(y)	       % display the denoised signal
+ title('Denoised Signal')

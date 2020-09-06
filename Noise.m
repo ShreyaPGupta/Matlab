@@ -1,0 +1,10 @@
+clc;
+close all;
+recObj = audiorecorder;
+disp('Start speaking.');
+recordblocking(recObj, 2);
+disp('End of Recording.');
+x = getaudiodata(recObj);
+xden =wdenoise(x);
+plot([x' xden']);
+legend('original signal','denoised signal');

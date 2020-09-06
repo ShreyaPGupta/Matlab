@@ -1,0 +1,13 @@
+% The current extension mode is zero-padding (see dwtmode).
+% Generate Gaussian white noise.
+x = randn(1,1000);
+
+% Find threshold for each selection rule. 
+% Adaptive threshold using SURE. 
+thr = thselect(x,'rigrsure') 
+% Fixed form threshold. 
+thr = thselect(x,'sqtwolog') 
+% Heuristic variant of the first option. 
+thr = thselect(x,'heursure') 
+% Minimax threshold. 
+thr = thselect(x,'minimaxi') 

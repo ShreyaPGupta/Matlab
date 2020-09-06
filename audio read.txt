@@ -1,0 +1,17 @@
+clc;
+clear all;
+f=0.8;
+n=6;
+a=firl(n,f,'high');
+b=firl(n,f,'low');
+[y,fs]=audioread('sp01_train_sn5.wav');
+o=filter(1,a,y);
+p=filter(1,b,o);
+fvtool(p,1);
+subplot(2,1,1);
+plot(y);
+subplot(2,1,2);
+plot(p);
+
+o=filter(y);
+plot(o) 

@@ -1,0 +1,3 @@
+windowWidth = 11; 
+kernel = ones(windowWidth,1) / windowWidth;
+out = filter(kernel, 1, yourInputSignal);

@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+% Read the speech file that contain the noise
+fs=8000
+recObj = audiorecorder;
+disp('Start speaking.');
+recordblocking(recObj, 2);
+disp('End of Recording.');
+x = getaudiodata(recObj);
+ len=length(x);
